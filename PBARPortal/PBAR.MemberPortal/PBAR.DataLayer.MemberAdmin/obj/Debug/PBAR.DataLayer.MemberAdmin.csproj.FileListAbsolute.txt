@@ -1,0 +1,4 @@
+F:\PBARPortal\PBAR.MemberPortal\PBAR.DataLayer.MemberAdmin\bin\Debug\PBAR.DataLayer.MemberAdmin.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.DataLayer.MemberAdmin\bin\Debug\PBAR.DataLayer.MemberAdmin.pdb
+F:\PBARPortal\PBAR.MemberPortal\PBAR.DataLayer.MemberAdmin\obj\Debug\PBAR.DataLayer.MemberAdmin.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.DataLayer.MemberAdmin\obj\Debug\PBAR.DataLayer.MemberAdmin.pdb

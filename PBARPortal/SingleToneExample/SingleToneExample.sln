@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleToneExample", "SingleToneExample\SingleToneExample.csproj", "{BFF940E3-B386-4589-8B3E-98D2C1DF6B4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFF940E3-B386-4589-8B3E-98D2C1DF6B4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF940E3-B386-4589-8B3E-98D2C1DF6B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF940E3-B386-4589-8B3E-98D2C1DF6B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF940E3-B386-4589-8B3E-98D2C1DF6B4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,4 @@
+F:\PBARPortal\PBAR.MemberPortal\PBAR.Comman.ClassLibrary\bin\Debug\PBAR.Comman.ClassLibrary.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.Comman.ClassLibrary\bin\Debug\PBAR.Comman.ClassLibrary.pdb
+F:\PBARPortal\PBAR.MemberPortal\PBAR.Comman.ClassLibrary\obj\Debug\PBAR.Comman.ClassLibrary.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.Comman.ClassLibrary\obj\Debug\PBAR.Comman.ClassLibrary.pdb

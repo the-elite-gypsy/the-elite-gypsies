@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3671b543d6a24352a15a8c73b322ea3a" Name="Diagram1">
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_AUDITLOG" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_CALENDARITEMS" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_CORPORATEPROFILE" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_CORPORATES" Width="1.5" PointX="0.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_CORPORATESERVICEPROVIDERS" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_CORPORATEUSERS" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_CORPORATEVESSELS" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_CREWLIST" Width="1.5" PointX="7.5" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_DOCUMENTPROFILES" Width="1.5" PointX="5.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_DOCUMENTS" Width="1.5" PointX="7.5" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_EDUCATION" Width="1.5" PointX="5.25" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_EMPLOYERPROFILE" Width="1.5" PointX="12" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_EMPLOYERS" Width="1.5" PointX="9.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_FISHINGLIST" Width="1.5" PointX="12" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_JOBADVERTISEMENT" Width="1.5" PointX="14.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_JOBAPPLICANTS" Width="1.5" PointX="14.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_JOBPOSTING" Width="1.5" PointX="12" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_LOOKUPCATEGORIES" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_LOOKUPS" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_MEMBERCONFIRMATIONEMAIL" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_MEMBERPROFILE" Width="1.5" PointX="5.25" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_MEMBERS" Width="1.5" PointX="3" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_MEMBERSOCIALIDS" Width="1.5" PointX="5.25" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_MEMBERVESSELS" Width="1.5" PointX="5.25" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_NEXTOFKIN" Width="1.5" PointX="5.25" PointY="47" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_PASSAGEACCESS" Width="1.5" PointX="7.5" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_PASSAGES" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_PAYMENTDETAILS" Width="1.5" PointX="19.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_PLANMASTER" Width="1.5" PointX="14.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_REMINDERITEMS" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_ROTATIONALSEAASSIGNMENTS" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_SEAASSIGNMENTS" Width="1.5" PointX="5.25" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_SERVICEPROVIDERS" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_SUBSCRIPTIONS" Width="1.5" PointX="17" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_SYSCONFIG" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_VERIFICATIONPLANS" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_VERIFYINFO" Width="1.5" PointX="7.5" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_VESSELS" Width="1.5" PointX="9.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBAR_PORTALModel.DMN_WORKASSIGNMENTS" Width="1.5" PointX="5.25" PointY="56.875" IsExpanded="true" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_CALENDARITEMS_DMN_MEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_CORPORATEPROFILE_DMN_CORPORATES" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_CORPORATESERVICEPROVIDERS_DMN_CORPORATES" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_CORPORATEUSERS_DMN_CORPORATES" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_CORPORATEVESSELS_DMN_CORPORATES1" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_PASSAGE_DMN_CORPORATEVESSELS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_CREWLIST_DMN_PASSAGE" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_DOCUMENTPROFILES_DMN_MEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_DOCUMENTS_DMN_DOCUMENTPROFILES" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_VERIFYINFO_DMN_DOCUMENTPROFILES" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_EDUCATION_DMN_MEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_EMPLOYERPROFILE_DMN_EMPLOYERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_FISHINGLIST_DMN_EMPLOYERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_JOBPOSTING_DMN_EMPLOYERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_JOBADVERTISEMENT_DMN_JOBPOSTING" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_JOBAPPLICANTS_DMN_JOBPOSTING" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_LOOKUPS_DMN_LOOKUPCATEGORIES" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_MEMBERPROFILE_DMN_MEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_MEMBERSOCIALIDS_DMN_MEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_MEMBERVESSELS_DMN_MEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_NEXTOFKIN_DMN_MEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_SEAASSIGNMENTS_DMN_MEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_WORKASSIGNMENTS_DMN_MEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_PASSAGEACCESS_DMN_PASSAGE" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_PAYMENTDETAILS_DMN_SUBSCRIPTIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.FK_DMN_SUBSCRIPTIONS_DMN_PLANMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="PBAR_PORTALModel.DMN_CORPORATEMEMBERS" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,6 @@
+F:\PBARPortal\SingleToneExample\SingleToneExample\bin\Debug\SingleToneExample.exe.config
+F:\PBARPortal\SingleToneExample\SingleToneExample\bin\Debug\SingleToneExample.exe
+F:\PBARPortal\SingleToneExample\SingleToneExample\bin\Debug\SingleToneExample.pdb
+F:\PBARPortal\SingleToneExample\SingleToneExample\obj\Debug\SingleToneExample.csprojResolveAssemblyReference.cache
+F:\PBARPortal\SingleToneExample\SingleToneExample\obj\Debug\SingleToneExample.exe
+F:\PBARPortal\SingleToneExample\SingleToneExample\obj\Debug\SingleToneExample.pdb

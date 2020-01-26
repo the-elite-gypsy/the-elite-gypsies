@@ -1,0 +1,6 @@
+F:\PBARPortal\ConsolePrivateConstructor\ConsolePrivateConstructor\bin\Debug\ConsolePrivateConstructor.exe.config
+F:\PBARPortal\ConsolePrivateConstructor\ConsolePrivateConstructor\bin\Debug\ConsolePrivateConstructor.exe
+F:\PBARPortal\ConsolePrivateConstructor\ConsolePrivateConstructor\bin\Debug\ConsolePrivateConstructor.pdb
+F:\PBARPortal\ConsolePrivateConstructor\ConsolePrivateConstructor\obj\Debug\ConsolePrivateConstructor.csprojResolveAssemblyReference.cache
+F:\PBARPortal\ConsolePrivateConstructor\ConsolePrivateConstructor\obj\Debug\ConsolePrivateConstructor.exe
+F:\PBARPortal\ConsolePrivateConstructor\ConsolePrivateConstructor\obj\Debug\ConsolePrivateConstructor.pdb

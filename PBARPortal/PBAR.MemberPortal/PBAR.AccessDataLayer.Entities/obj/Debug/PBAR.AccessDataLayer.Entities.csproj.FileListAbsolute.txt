@@ -1,0 +1,10 @@
+F:\PBARPortal\PBAR.MemberPortal\PBAR.AccessDataLayer.Entities\bin\Debug\PBAR.AccessDataLayer.Entities.dll.config
+F:\PBARPortal\PBAR.MemberPortal\PBAR.AccessDataLayer.Entities\bin\Debug\PBAR.AccessDataLayer.Entities.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.AccessDataLayer.Entities\bin\Debug\PBAR.AccessDataLayer.Entities.pdb
+F:\PBARPortal\PBAR.MemberPortal\PBAR.AccessDataLayer.Entities\bin\Debug\EntityFramework.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.AccessDataLayer.Entities\bin\Debug\EntityFramework.SqlServer.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.AccessDataLayer.Entities\bin\Debug\EntityFramework.xml
+F:\PBARPortal\PBAR.MemberPortal\PBAR.AccessDataLayer.Entities\bin\Debug\EntityFramework.SqlServer.xml
+F:\PBARPortal\PBAR.MemberPortal\PBAR.AccessDataLayer.Entities\obj\Debug\PBAR.AccessDataLayer.Entities.csprojResolveAssemblyReference.cache
+F:\PBARPortal\PBAR.MemberPortal\PBAR.AccessDataLayer.Entities\obj\Debug\PBAR.AccessDataLayer.Entities.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.AccessDataLayer.Entities\obj\Debug\PBAR.AccessDataLayer.Entities.pdb

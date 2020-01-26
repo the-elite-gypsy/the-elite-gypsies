@@ -1,0 +1,1080 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PBAR_PORTALModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DMN_AUDITLOG">
+    <Key>
+      <PropertyRef Name="AUDITID" />
+    </Key>
+    <Property Name="AUDITID" Type="Int32" Nullable="false" />
+    <Property Name="AUDITCODE" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WORKSTATIONNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NETWORKIP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SOURCE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DMN_CALENDARITEMS">
+    <Key>
+      <PropertyRef Name="CALENDARITEMID" />
+    </Key>
+    <Property Name="CALENDARITEMID" Type="Int32" Nullable="false" />
+    <Property Name="ITEMTYPE" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="3" />
+    <Property Name="ENDDATE" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="COUNTRYID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_MEMBERS" Relationship="Self.FK_DMN_CALENDARITEMS_DMN_MEMBERS" FromRole="DMN_CALENDARITEMS" ToRole="DMN_MEMBERS" />
+  </EntityType>
+  <EntityType Name="DMN_CORPORATEPROFILE">
+    <Key>
+      <PropertyRef Name="CORPORATEID" />
+    </Key>
+    <Property Name="CORPORATEID" Type="Int32" Nullable="false" />
+    <Property Name="FULLNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRYID" Type="Int32" />
+    <Property Name="ZIPCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="COREINDUSTRYID" Type="Int32" />
+    <Property Name="LOCATIONID" Type="Int32" />
+    <Property Name="REGNNO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WEBSITE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TELEPHONE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_CORPORATES" Relationship="Self.FK_DMN_CORPORATEPROFILE_DMN_CORPORATES" FromRole="DMN_CORPORATEPROFILE" ToRole="DMN_CORPORATES" />
+  </EntityType>
+  <EntityType Name="DMN_CORPORATES">
+    <Key>
+      <PropertyRef Name="CORPORATEID" />
+    </Key>
+    <Property Name="CORPORATEID" Type="Int32" Nullable="false" />
+    <Property Name="REFERENCE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="SUBSCRIPTIONID" Type="Int32" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_CORPORATEPROFILE" Relationship="Self.FK_DMN_CORPORATEPROFILE_DMN_CORPORATES" FromRole="DMN_CORPORATES" ToRole="DMN_CORPORATEPROFILE" />
+    <NavigationProperty Name="DMN_CORPORATESERVICEPROVIDERS" Relationship="Self.FK_DMN_CORPORATESERVICEPROVIDERS_DMN_CORPORATES" FromRole="DMN_CORPORATES" ToRole="DMN_CORPORATESERVICEPROVIDERS" />
+    <NavigationProperty Name="DMN_CORPORATEUSERS" Relationship="Self.FK_DMN_CORPORATEUSERS_DMN_CORPORATES" FromRole="DMN_CORPORATES" ToRole="DMN_CORPORATEUSERS" />
+    <NavigationProperty Name="DMN_CORPORATEVESSELS" Relationship="Self.FK_DMN_CORPORATEVESSELS_DMN_CORPORATES1" FromRole="DMN_CORPORATES" ToRole="DMN_CORPORATEVESSELS" />
+    <NavigationProperty Name="DMN_MEMBERS" Relationship="Self.DMN_CORPORATEMEMBERS" FromRole="DMN_CORPORATES" ToRole="DMN_MEMBERS" />
+  </EntityType>
+  <EntityType Name="DMN_CORPORATESERVICEPROVIDERS">
+    <Key>
+      <PropertyRef Name="CORPORATEID" />
+      <PropertyRef Name="SERVICEPROVIDERID" />
+    </Key>
+    <Property Name="CORPORATEID" Type="Int32" Nullable="false" />
+    <Property Name="SERVICEPROVIDERID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DMN_CORPORATES" Relationship="Self.FK_DMN_CORPORATESERVICEPROVIDERS_DMN_CORPORATES" FromRole="DMN_CORPORATESERVICEPROVIDERS" ToRole="DMN_CORPORATES" />
+  </EntityType>
+  <EntityType Name="DMN_CORPORATEUSERS">
+    <Key>
+      <PropertyRef Name="CORPORATEID" />
+      <PropertyRef Name="USERNAME" />
+    </Key>
+    <Property Name="CORPORATEID" Type="Int32" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FULLNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DESIGNATION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TELEPHONE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMAILADDRESS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PERMISSION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LASTLOGGEDIN" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="DMN_CORPORATES" Relationship="Self.FK_DMN_CORPORATEUSERS_DMN_CORPORATES" FromRole="DMN_CORPORATEUSERS" ToRole="DMN_CORPORATES" />
+  </EntityType>
+  <EntityType Name="DMN_CORPORATEVESSELS">
+    <Key>
+      <PropertyRef Name="VESSELID" />
+    </Key>
+    <Property Name="VESSELID" Type="Int32" Nullable="false" />
+    <Property Name="CORPORATEID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DMN_CORPORATES" Relationship="Self.FK_DMN_CORPORATEVESSELS_DMN_CORPORATES1" FromRole="DMN_CORPORATEVESSELS" ToRole="DMN_CORPORATES" />
+    <NavigationProperty Name="DMN_PASSAGES" Relationship="Self.FK_DMN_PASSAGE_DMN_CORPORATEVESSELS" FromRole="DMN_CORPORATEVESSELS" ToRole="DMN_PASSAGES" />
+  </EntityType>
+  <EntityType Name="DMN_CREWLIST">
+    <Key>
+      <PropertyRef Name="PASSAGEID" />
+      <PropertyRef Name="MEMBERID" />
+    </Key>
+    <Property Name="PASSAGEID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DMN_PASSAGES" Relationship="Self.FK_DMN_CREWLIST_DMN_PASSAGE" FromRole="DMN_CREWLIST" ToRole="DMN_PASSAGES" />
+  </EntityType>
+  <EntityType Name="DMN_DOCUMENTPROFILES">
+    <Key>
+      <PropertyRef Name="DOCID" />
+    </Key>
+    <Property Name="DOCID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" />
+    <Property Name="DOCTYPEID" Type="Int32" />
+    <Property Name="DOCSUBTYPEID" Type="Int32" />
+    <Property Name="REFERENCENO" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="DOCTITLE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ISSUEDATE" Type="DateTime" Precision="0" />
+    <Property Name="EXPIRYDATE" Type="DateTime" Precision="0" />
+    <Property Name="ISSUEDBYID" Type="Int32" />
+    <Property Name="ISSUEDCOUNTRYID" Type="Int32" />
+    <Property Name="NEEDTOVERIFY" Type="Boolean" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LASTMODIFIEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LASTMODIFIEDON" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DMN_MEMBERS" Relationship="Self.FK_DMN_DOCUMENTPROFILES_DMN_MEMBERS" FromRole="DMN_DOCUMENTPROFILES" ToRole="DMN_MEMBERS" />
+    <NavigationProperty Name="DMN_DOCUMENTS" Relationship="Self.FK_DMN_DOCUMENTS_DMN_DOCUMENTPROFILES" FromRole="DMN_DOCUMENTPROFILES" ToRole="DMN_DOCUMENTS" />
+    <NavigationProperty Name="DMN_VERIFYINFO" Relationship="Self.FK_DMN_VERIFYINFO_DMN_DOCUMENTPROFILES" FromRole="DMN_DOCUMENTPROFILES" ToRole="DMN_VERIFYINFO" />
+  </EntityType>
+  <EntityType Name="DMN_DOCUMENTS">
+    <Key>
+      <PropertyRef Name="DOCID" />
+    </Key>
+    <Property Name="DOCID" Type="Int32" Nullable="false" />
+    <Property Name="DOCTYPEID" Type="Int32" />
+    <Property Name="LINKID" Type="Int32" />
+    <Property Name="DOCSOURCE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FILEUI" Type="Guid" />
+    <Property Name="FILENAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FILEEXTENSION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FILESIZE" Type="Int32" />
+    <Property Name="FILEPATH" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="PRIVATE" Type="Boolean" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_DOCUMENTPROFILES" Relationship="Self.FK_DMN_DOCUMENTS_DMN_DOCUMENTPROFILES" FromRole="DMN_DOCUMENTS" ToRole="DMN_DOCUMENTPROFILES" />
+  </EntityType>
+  <EntityType Name="DMN_EDUCATION">
+    <Key>
+      <PropertyRef Name="EDUCATIONID" />
+    </Key>
+    <Property Name="EDUCATIONID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" />
+    <Property Name="EDUCATIONLEVEL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="INSTITUTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+    <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+    <Property Name="SPECIALIZATION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_MEMBERS" Relationship="Self.FK_DMN_EDUCATION_DMN_MEMBERS" FromRole="DMN_EDUCATION" ToRole="DMN_MEMBERS" />
+  </EntityType>
+  <EntityType Name="DMN_EMPLOYERPROFILE">
+    <Key>
+      <PropertyRef Name="EMPLOYERID" />
+    </Key>
+    <Property Name="EMPLOYERID" Type="Int32" Nullable="false" />
+    <Property Name="FULLNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRYID" Type="Int32" />
+    <Property Name="ZIPCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="COREINDUSTRYID" Type="Int32" />
+    <Property Name="LOCATIONID" Type="Int32" />
+    <Property Name="REGNNO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WEBSITE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TELEPHONE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_EMPLOYERS" Relationship="Self.FK_DMN_EMPLOYERPROFILE_DMN_EMPLOYERS" FromRole="DMN_EMPLOYERPROFILE" ToRole="DMN_EMPLOYERS" />
+  </EntityType>
+  <EntityType Name="DMN_EMPLOYERS">
+    <Key>
+      <PropertyRef Name="EMPLOYERID" />
+    </Key>
+    <Property Name="EMPLOYERID" Type="Int32" Nullable="false" />
+    <Property Name="REFERENCE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="SUBSCRIPTIONID" Type="Int32" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="USERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_EMPLOYERPROFILE" Relationship="Self.FK_DMN_EMPLOYERPROFILE_DMN_EMPLOYERS" FromRole="DMN_EMPLOYERS" ToRole="DMN_EMPLOYERPROFILE" />
+    <NavigationProperty Name="DMN_FISHINGLIST" Relationship="Self.FK_DMN_FISHINGLIST_DMN_EMPLOYERS" FromRole="DMN_EMPLOYERS" ToRole="DMN_FISHINGLIST" />
+    <NavigationProperty Name="DMN_JOBPOSTING" Relationship="Self.FK_DMN_JOBPOSTING_DMN_EMPLOYERS" FromRole="DMN_EMPLOYERS" ToRole="DMN_JOBPOSTING" />
+  </EntityType>
+  <EntityType Name="DMN_FISHINGLIST">
+    <Key>
+      <PropertyRef Name="EMPLOYERID" />
+      <PropertyRef Name="MEMBERID" />
+    </Key>
+    <Property Name="EMPLOYERID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" Nullable="false" />
+    <Property Name="SHORTLISTEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="DOWNLOADED" Type="Boolean" />
+    <Property Name="DOWNLOADDATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DMN_EMPLOYERS" Relationship="Self.FK_DMN_FISHINGLIST_DMN_EMPLOYERS" FromRole="DMN_FISHINGLIST" ToRole="DMN_EMPLOYERS" />
+  </EntityType>
+  <EntityType Name="DMN_JOBADVERTISEMENT">
+    <Key>
+      <PropertyRef Name="ADVERTISEID" />
+    </Key>
+    <Property Name="ADVERTISEID" Type="Int32" Nullable="false" />
+    <Property Name="JOBID" Type="Int32" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+    <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+    <Property Name="STATUSID" Type="Int32" />
+    <Property Name="READCOUNT" Type="Int32" />
+    <Property Name="MEMBERAPPLYCOUNT" Type="Int32" />
+    <Property Name="NONMEMBERAPPLYCOUNT" Type="Int32" />
+    <NavigationProperty Name="DMN_JOBPOSTING" Relationship="Self.FK_DMN_JOBADVERTISEMENT_DMN_JOBPOSTING" FromRole="DMN_JOBADVERTISEMENT" ToRole="DMN_JOBPOSTING" />
+  </EntityType>
+  <EntityType Name="DMN_JOBAPPLICANTS">
+    <Key>
+      <PropertyRef Name="JOBID" />
+      <PropertyRef Name="MEMBERID" />
+    </Key>
+    <Property Name="JOBID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" Nullable="false" />
+    <Property Name="APPLYDATE" Type="DateTime" Precision="3" />
+    <Property Name="SHORTLISTEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="DOWNLOADED" Type="Boolean" />
+    <Property Name="DOWNLOADDATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DMN_JOBPOSTING" Relationship="Self.FK_DMN_JOBAPPLICANTS_DMN_JOBPOSTING" FromRole="DMN_JOBAPPLICANTS" ToRole="DMN_JOBPOSTING" />
+  </EntityType>
+  <EntityType Name="DMN_JOBPOSTING">
+    <Key>
+      <PropertyRef Name="JOBID" />
+    </Key>
+    <Property Name="JOBID" Type="Int32" Nullable="false" />
+    <Property Name="EMPLOYERID" Type="Int32" />
+    <Property Name="JOBTITLE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="REFERENCE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="JOBOWNER" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="JOBTYPEID" Type="Int32" />
+    <Property Name="JOBLOCATIONID" Type="Int32" />
+    <Property Name="JOBSUBLOCATIONID" Type="Int32" />
+    <Property Name="VACANCIES" Type="Int32" />
+    <Property Name="SPECIALIZATIONID" Type="Int32" />
+    <Property Name="SUBSPECIALIZATIONID" Type="Int32" />
+    <Property Name="MINQUALIFICATIONID" Type="Int32" />
+    <Property Name="MINSEAEXPERIENCE" Type="Int32" />
+    <Property Name="MINWORKEXPERIENCE" Type="Int32" />
+    <Property Name="MINSALARY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MAXSALARY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CURRENCYID" Type="Int32" />
+    <Property Name="SALARYDESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="REMARKS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="JOBDESCRIPTION" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="DMN_EMPLOYERS" Relationship="Self.FK_DMN_JOBPOSTING_DMN_EMPLOYERS" FromRole="DMN_JOBPOSTING" ToRole="DMN_EMPLOYERS" />
+    <NavigationProperty Name="DMN_JOBADVERTISEMENT" Relationship="Self.FK_DMN_JOBADVERTISEMENT_DMN_JOBPOSTING" FromRole="DMN_JOBPOSTING" ToRole="DMN_JOBADVERTISEMENT" />
+    <NavigationProperty Name="DMN_JOBAPPLICANTS" Relationship="Self.FK_DMN_JOBAPPLICANTS_DMN_JOBPOSTING" FromRole="DMN_JOBPOSTING" ToRole="DMN_JOBAPPLICANTS" />
+  </EntityType>
+  <EntityType Name="DMN_LOOKUPCATEGORIES">
+    <Key>
+      <PropertyRef Name="LOOKUPCATEGORYID" />
+    </Key>
+    <Property Name="LOOKUPCATEGORYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CATEGORY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_LOOKUPS" Relationship="Self.FK_DMN_LOOKUPS_DMN_LOOKUPCATEGORIES" FromRole="DMN_LOOKUPCATEGORIES" ToRole="DMN_LOOKUPS" />
+  </EntityType>
+  <EntityType Name="DMN_LOOKUPS">
+    <Key>
+      <PropertyRef Name="LOOKUPID" />
+    </Key>
+    <Property Name="LOOKUPID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CATEGORYID" Type="Int32" />
+    <Property Name="PARENTID" Type="Int32" />
+    <Property Name="VALUE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_LOOKUPCATEGORIES" Relationship="Self.FK_DMN_LOOKUPS_DMN_LOOKUPCATEGORIES" FromRole="DMN_LOOKUPS" ToRole="DMN_LOOKUPCATEGORIES" />
+  </EntityType>
+  <EntityType Name="DMN_MEMBERCONFIRMATIONEMAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" />
+    <Property Name="SENDCONFIRMATIONEMAIL" Type="DateTime" Precision="3" />
+    <Property Name="RECEIVECONFIRMATIONEMAIL" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="DMN_MEMBERPROFILE">
+    <Key>
+      <PropertyRef Name="MEMBERID" />
+    </Key>
+    <Property Name="MEMBERID" Type="Int32" Nullable="false" />
+    <Property Name="FIRSTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MIDDLENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LASTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FULLNAME" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="NICKNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GENDERID" Type="Int32" />
+    <Property Name="CITIZENSHIPID" Type="Int32" />
+    <Property Name="MARITALSTATUSID" Type="Int32" />
+    <Property Name="RESIDENTADDRESS1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RESIDENTADDRESS2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RESIDENTADDRESS3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RESIDENTCITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RESIDENTCOUNTRYID" Type="Int32" />
+    <Property Name="RESIDENTZIPCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARYCONTACT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SECONDARYCONTACT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="LANGUAGES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SOURCEID" Type="Int32" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LASTMODIFIEDON" Type="DateTime" Precision="3" />
+    <Property Name="LASTMODIFIEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_MEMBERS" Relationship="Self.FK_DMN_MEMBERPROFILE_DMN_MEMBERS" FromRole="DMN_MEMBERPROFILE" ToRole="DMN_MEMBERS" />
+  </EntityType>
+  <EntityType Name="DMN_MEMBERS">
+    <Key>
+      <PropertyRef Name="MEMBERID" />
+    </Key>
+    <Property Name="MEMBERID" Type="Int32" Nullable="false" />
+    <Property Name="REFERENCE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="USERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="Int32" />
+    <Property Name="STATUSDATE" Type="DateTime" Precision="0" />
+    <Property Name="PRIVATE" Type="Boolean" />
+    <Property Name="LASTLOGGEDIN" Type="DateTime" Precision="3" />
+    <Property Name="LASTPASSWORDCHANGED" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DMN_CALENDARITEMS" Relationship="Self.FK_DMN_CALENDARITEMS_DMN_MEMBERS" FromRole="DMN_MEMBERS" ToRole="DMN_CALENDARITEMS" />
+    <NavigationProperty Name="DMN_DOCUMENTPROFILES" Relationship="Self.FK_DMN_DOCUMENTPROFILES_DMN_MEMBERS" FromRole="DMN_MEMBERS" ToRole="DMN_DOCUMENTPROFILES" />
+    <NavigationProperty Name="DMN_EDUCATION" Relationship="Self.FK_DMN_EDUCATION_DMN_MEMBERS" FromRole="DMN_MEMBERS" ToRole="DMN_EDUCATION" />
+    <NavigationProperty Name="DMN_MEMBERPROFILE" Relationship="Self.FK_DMN_MEMBERPROFILE_DMN_MEMBERS" FromRole="DMN_MEMBERS" ToRole="DMN_MEMBERPROFILE" />
+    <NavigationProperty Name="DMN_MEMBERSOCIALIDS" Relationship="Self.FK_DMN_MEMBERSOCIALIDS_DMN_MEMBERS" FromRole="DMN_MEMBERS" ToRole="DMN_MEMBERSOCIALIDS" />
+    <NavigationProperty Name="DMN_MEMBERVESSELS" Relationship="Self.FK_DMN_MEMBERVESSELS_DMN_MEMBERS" FromRole="DMN_MEMBERS" ToRole="DMN_MEMBERVESSELS" />
+    <NavigationProperty Name="DMN_NEXTOFKIN" Relationship="Self.FK_DMN_NEXTOFKIN_DMN_MEMBERS" FromRole="DMN_MEMBERS" ToRole="DMN_NEXTOFKIN" />
+    <NavigationProperty Name="DMN_SEAASSIGNMENTS" Relationship="Self.FK_DMN_SEAASSIGNMENTS_DMN_MEMBERS" FromRole="DMN_MEMBERS" ToRole="DMN_SEAASSIGNMENTS" />
+    <NavigationProperty Name="DMN_WORKASSIGNMENTS" Relationship="Self.FK_DMN_WORKASSIGNMENTS_DMN_MEMBERS" FromRole="DMN_MEMBERS" ToRole="DMN_WORKASSIGNMENTS" />
+    <NavigationProperty Name="DMN_CORPORATES" Relationship="Self.DMN_CORPORATEMEMBERS" FromRole="DMN_MEMBERS" ToRole="DMN_CORPORATES" />
+  </EntityType>
+  <EntityType Name="DMN_MEMBERSOCIALIDS">
+    <Key>
+      <PropertyRef Name="SOCIALID" />
+    </Key>
+    <Property Name="SOCIALID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" />
+    <Property Name="SOCIALNETWORK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SOCIALNETWORKID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DMN_MEMBERS" Relationship="Self.FK_DMN_MEMBERSOCIALIDS_DMN_MEMBERS" FromRole="DMN_MEMBERSOCIALIDS" ToRole="DMN_MEMBERS" />
+  </EntityType>
+  <EntityType Name="DMN_MEMBERVESSELS">
+    <Key>
+      <PropertyRef Name="VESSELID" />
+      <PropertyRef Name="MEMBERID" />
+    </Key>
+    <Property Name="VESSELID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DMN_MEMBERS" Relationship="Self.FK_DMN_MEMBERVESSELS_DMN_MEMBERS" FromRole="DMN_MEMBERVESSELS" ToRole="DMN_MEMBERS" />
+  </EntityType>
+  <EntityType Name="DMN_NEXTOFKIN">
+    <Key>
+      <PropertyRef Name="NEXTOFKINID" />
+    </Key>
+    <Property Name="NEXTOFKINID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" />
+    <Property Name="FULLNAME" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="TELEPHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRYID" Type="Int32" />
+    <Property Name="ZIPCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_MEMBERS" Relationship="Self.FK_DMN_NEXTOFKIN_DMN_MEMBERS" FromRole="DMN_NEXTOFKIN" ToRole="DMN_MEMBERS" />
+  </EntityType>
+  <EntityType Name="DMN_PASSAGEACCESS">
+    <Key>
+      <PropertyRef Name="PASSAGEID" />
+      <PropertyRef Name="USERNAME" />
+    </Key>
+    <Property Name="PASSAGEID" Type="Int32" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="DMN_PASSAGES" Relationship="Self.FK_DMN_PASSAGEACCESS_DMN_PASSAGE" FromRole="DMN_PASSAGEACCESS" ToRole="DMN_PASSAGES" />
+  </EntityType>
+  <EntityType Name="DMN_PASSAGES">
+    <Key>
+      <PropertyRef Name="PASSAGEID" />
+    </Key>
+    <Property Name="PASSAGEID" Type="Int32" Nullable="false" />
+    <Property Name="VESSELID" Type="Int32" Nullable="false" />
+    <Property Name="VOYAGENUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="JOURNEYTYPEID" Type="Int32" />
+    <Property Name="JOURNEYDATE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PORTNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LASTPORTOFCALL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDOON" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DMN_CORPORATEVESSELS" Relationship="Self.FK_DMN_PASSAGE_DMN_CORPORATEVESSELS" FromRole="DMN_PASSAGES" ToRole="DMN_CORPORATEVESSELS" />
+    <NavigationProperty Name="DMN_CREWLIST" Relationship="Self.FK_DMN_CREWLIST_DMN_PASSAGE" FromRole="DMN_PASSAGES" ToRole="DMN_CREWLIST" />
+    <NavigationProperty Name="DMN_PASSAGEACCESS" Relationship="Self.FK_DMN_PASSAGEACCESS_DMN_PASSAGE" FromRole="DMN_PASSAGES" ToRole="DMN_PASSAGEACCESS" />
+  </EntityType>
+  <EntityType Name="DMN_PAYMENTDETAILS">
+    <Key>
+      <PropertyRef Name="PAYMENTID" />
+    </Key>
+    <Property Name="PAYMENTID" Type="Int32" Nullable="false" />
+    <Property Name="SUBSCRIPTIONID" Type="Int32" Nullable="false" />
+    <Property Name="PAYMENTMODE" Type="Int32" />
+    <Property Name="PAIDAMOUNT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="EXPIRYDATE" Type="DateTime" Precision="0" />
+    <Property Name="TRANSACTIONREF" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_SUBSCRIPTIONS" Relationship="Self.FK_DMN_PAYMENTDETAILS_DMN_SUBSCRIPTIONS" FromRole="DMN_PAYMENTDETAILS" ToRole="DMN_SUBSCRIPTIONS" />
+  </EntityType>
+  <EntityType Name="DMN_PLANMASTER">
+    <Key>
+      <PropertyRef Name="PLANID" />
+    </Key>
+    <Property Name="PLANID" Type="Int32" Nullable="false" />
+    <Property Name="TITLE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENCY" Type="Int32" />
+    <Property Name="FEE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="STORAGE" Type="Int32" />
+    <Property Name="DOCUMENTS" Type="Int32" />
+    <Property Name="REMINDERS" Type="Int32" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="REMARKS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_SUBSCRIPTIONS" Relationship="Self.FK_DMN_SUBSCRIPTIONS_DMN_PLANMASTER" FromRole="DMN_PLANMASTER" ToRole="DMN_SUBSCRIPTIONS" />
+  </EntityType>
+  <EntityType Name="DMN_REMINDERITEMS">
+    <Key>
+      <PropertyRef Name="REMINDERID" />
+    </Key>
+    <Property Name="REMINDERID" Type="Int32" Nullable="false" />
+    <Property Name="CALENDARITEMID" Type="Int32" Nullable="false" />
+    <Property Name="REMINDERUSERID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="REMINDERTYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FREQUENCYDAYS" Type="Int32" />
+    <Property Name="MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DMN_ROTATIONALSEAASSIGNMENTS">
+    <Key>
+      <PropertyRef Name="ROTATIONALID" />
+    </Key>
+    <Property Name="ROTATIONALID" Type="Int32" Nullable="false" />
+    <Property Name="ASSIGNMENTID" Type="Int32" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+    <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="DMN_SEAASSIGNMENTS">
+    <Key>
+      <PropertyRef Name="ASSIGNMENTID" />
+    </Key>
+    <Property Name="ASSIGNMENTID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" />
+    <Property Name="COMPANY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TITLE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENTID" Type="Int32" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+    <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+    <Property Name="RANKID" Type="Int32" Nullable="false" />
+    <Property Name="RANKOTHERS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VESSELID" Type="Int32" Nullable="false" />
+    <Property Name="PORTOFREGISTRYID" Type="Int32" Nullable="false" />
+    <Property Name="PORTOFREGISTRYOTHERS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TOTALSEATIMEDAYS" Type="Int32" />
+    <Property Name="ROTATIONALTYPE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ROTATIONALUNITINDAYS" Type="Int32" />
+    <Property Name="PRIVATE" Type="Boolean" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LASTMODIFIEDON" Type="DateTime" Precision="3" />
+    <Property Name="LASTMODIFIEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_MEMBERS" Relationship="Self.FK_DMN_SEAASSIGNMENTS_DMN_MEMBERS" FromRole="DMN_SEAASSIGNMENTS" ToRole="DMN_MEMBERS" />
+  </EntityType>
+  <EntityType Name="DMN_SERVICEPROVIDERS">
+    <Key>
+      <PropertyRef Name="SERVICEPROVIDERID" />
+    </Key>
+    <Property Name="SERVICEPROVIDERID" Type="Int32" Nullable="false" />
+    <Property Name="PROVIDERTYPE" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENTNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRYID" Type="Int32" />
+    <Property Name="ZIPCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TELEPHONE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="WEBSITE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DMN_SUBSCRIPTIONS">
+    <Key>
+      <PropertyRef Name="SUBSCRIPTIONID" />
+    </Key>
+    <Property Name="SUBSCRIPTIONID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" />
+    <Property Name="PLANID" Type="Int32" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FEE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CURRENCY" Type="Int32" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DMN_PAYMENTDETAILS" Relationship="Self.FK_DMN_PAYMENTDETAILS_DMN_SUBSCRIPTIONS" FromRole="DMN_SUBSCRIPTIONS" ToRole="DMN_PAYMENTDETAILS" />
+    <NavigationProperty Name="DMN_PLANMASTER" Relationship="Self.FK_DMN_SUBSCRIPTIONS_DMN_PLANMASTER" FromRole="DMN_SUBSCRIPTIONS" ToRole="DMN_PLANMASTER" />
+  </EntityType>
+  <EntityType Name="DMN_SYSCONFIG">
+    <Key>
+      <PropertyRef Name="SECTION" />
+      <PropertyRef Name="KEYNAME" />
+      <PropertyRef Name="KEYNAME2" />
+    </Key>
+    <Property Name="SECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KEYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KEYNAME2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KEYVALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KEYVALUEXEX" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DMN_VERIFICATIONPLANS">
+    <Key>
+      <PropertyRef Name="PURCHASEID" />
+    </Key>
+    <Property Name="PURCHASEID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" />
+    <Property Name="FEE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CURRENCY" Type="Int32" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="PAYMENTMODE" Type="Int32" />
+    <Property Name="PAIDAMOUNT" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="DMN_VERIFYINFO">
+    <Key>
+      <PropertyRef Name="DOCID" />
+    </Key>
+    <Property Name="DOCID" Type="Int32" Nullable="false" />
+    <Property Name="SERVICEPROVIDERID" Type="Int32" />
+    <Property Name="REQUESTDATE" Type="DateTime" Precision="3" />
+    <Property Name="SUBMITTEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="SUBMITTEDEMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="REPLYDATE" Type="DateTime" Precision="3" />
+    <Property Name="REPLYRESULT" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="REPLYDOCID" Type="Int32" />
+    <NavigationProperty Name="DMN_DOCUMENTPROFILES" Relationship="Self.FK_DMN_VERIFYINFO_DMN_DOCUMENTPROFILES" FromRole="DMN_VERIFYINFO" ToRole="DMN_DOCUMENTPROFILES" />
+  </EntityType>
+  <EntityType Name="DMN_VESSELS">
+    <Key>
+      <PropertyRef Name="VESSELID" />
+    </Key>
+    <Property Name="VESSELID" Type="Int32" Nullable="false" />
+    <Property Name="VESSELCATEGORY" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GROSSTONNAGE" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="CAPACITY" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="VESSELTYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FLAG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CALLSIGN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IMONUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TEU" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ENGINEPOWER" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ENGINETYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VESSELOWNER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="REGISTEREDCOMPANY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PORTOFREGISTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LASTMODIFIEDON" Type="DateTime" Precision="3" />
+    <Property Name="LASTMODIFIEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DMN_WORKASSIGNMENTS">
+    <Key>
+      <PropertyRef Name="ASSIGNEMENTID" />
+    </Key>
+    <Property Name="ASSIGNEMENTID" Type="Int32" Nullable="false" />
+    <Property Name="MEMBERID" Type="Int32" />
+    <Property Name="COMPANY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TITLE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENTID" Type="Int32" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+    <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRYID" Type="Int32" />
+    <Property Name="LOCATION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PRIVATE" Type="Boolean" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LASTMODIFIEDON" Type="DateTime" Precision="3" />
+    <Property Name="LASTMODIFIEDBY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DMN_MEMBERS" Relationship="Self.FK_DMN_WORKASSIGNMENTS_DMN_MEMBERS" FromRole="DMN_WORKASSIGNMENTS" ToRole="DMN_MEMBERS" />
+  </EntityType>
+  <Association Name="FK_DMN_CALENDARITEMS_DMN_MEMBERS">
+    <End Role="DMN_MEMBERS" Type="Self.DMN_MEMBERS" Multiplicity="1" />
+    <End Role="DMN_CALENDARITEMS" Type="Self.DMN_CALENDARITEMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_MEMBERS">
+        <PropertyRef Name="MEMBERID" />
+      </Principal>
+      <Dependent Role="DMN_CALENDARITEMS">
+        <PropertyRef Name="MEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_CORPORATEPROFILE_DMN_CORPORATES">
+    <End Role="DMN_CORPORATES" Type="Self.DMN_CORPORATES" Multiplicity="1" />
+    <End Role="DMN_CORPORATEPROFILE" Type="Self.DMN_CORPORATEPROFILE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_CORPORATES">
+        <PropertyRef Name="CORPORATEID" />
+      </Principal>
+      <Dependent Role="DMN_CORPORATEPROFILE">
+        <PropertyRef Name="CORPORATEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_CORPORATESERVICEPROVIDERS_DMN_CORPORATES">
+    <End Role="DMN_CORPORATES" Type="Self.DMN_CORPORATES" Multiplicity="1" />
+    <End Role="DMN_CORPORATESERVICEPROVIDERS" Type="Self.DMN_CORPORATESERVICEPROVIDERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_CORPORATES">
+        <PropertyRef Name="CORPORATEID" />
+      </Principal>
+      <Dependent Role="DMN_CORPORATESERVICEPROVIDERS">
+        <PropertyRef Name="CORPORATEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_CORPORATEUSERS_DMN_CORPORATES">
+    <End Role="DMN_CORPORATES" Type="Self.DMN_CORPORATES" Multiplicity="1" />
+    <End Role="DMN_CORPORATEUSERS" Type="Self.DMN_CORPORATEUSERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_CORPORATES">
+        <PropertyRef Name="CORPORATEID" />
+      </Principal>
+      <Dependent Role="DMN_CORPORATEUSERS">
+        <PropertyRef Name="CORPORATEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_CORPORATEVESSELS_DMN_CORPORATES1">
+    <End Role="DMN_CORPORATES" Type="Self.DMN_CORPORATES" Multiplicity="1" />
+    <End Role="DMN_CORPORATEVESSELS" Type="Self.DMN_CORPORATEVESSELS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_CORPORATES">
+        <PropertyRef Name="CORPORATEID" />
+      </Principal>
+      <Dependent Role="DMN_CORPORATEVESSELS">
+        <PropertyRef Name="CORPORATEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_PASSAGE_DMN_CORPORATEVESSELS">
+    <End Role="DMN_CORPORATEVESSELS" Type="Self.DMN_CORPORATEVESSELS" Multiplicity="1" />
+    <End Role="DMN_PASSAGES" Type="Self.DMN_PASSAGES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_CORPORATEVESSELS">
+        <PropertyRef Name="VESSELID" />
+      </Principal>
+      <Dependent Role="DMN_PASSAGES">
+        <PropertyRef Name="VESSELID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_CREWLIST_DMN_PASSAGE">
+    <End Role="DMN_PASSAGES" Type="Self.DMN_PASSAGES" Multiplicity="1" />
+    <End Role="DMN_CREWLIST" Type="Self.DMN_CREWLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_PASSAGES">
+        <PropertyRef Name="PASSAGEID" />
+      </Principal>
+      <Dependent Role="DMN_CREWLIST">
+        <PropertyRef Name="PASSAGEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_DOCUMENTPROFILES_DMN_MEMBERS">
+    <End Role="DMN_MEMBERS" Type="Self.DMN_MEMBERS" Multiplicity="0..1" />
+    <End Role="DMN_DOCUMENTPROFILES" Type="Self.DMN_DOCUMENTPROFILES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_MEMBERS">
+        <PropertyRef Name="MEMBERID" />
+      </Principal>
+      <Dependent Role="DMN_DOCUMENTPROFILES">
+        <PropertyRef Name="MEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_DOCUMENTS_DMN_DOCUMENTPROFILES">
+    <End Role="DMN_DOCUMENTPROFILES" Type="Self.DMN_DOCUMENTPROFILES" Multiplicity="1" />
+    <End Role="DMN_DOCUMENTS" Type="Self.DMN_DOCUMENTS" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_DOCUMENTPROFILES">
+        <PropertyRef Name="DOCID" />
+      </Principal>
+      <Dependent Role="DMN_DOCUMENTS">
+        <PropertyRef Name="DOCID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_VERIFYINFO_DMN_DOCUMENTPROFILES">
+    <End Role="DMN_DOCUMENTPROFILES" Type="Self.DMN_DOCUMENTPROFILES" Multiplicity="1" />
+    <End Role="DMN_VERIFYINFO" Type="Self.DMN_VERIFYINFO" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_DOCUMENTPROFILES">
+        <PropertyRef Name="DOCID" />
+      </Principal>
+      <Dependent Role="DMN_VERIFYINFO">
+        <PropertyRef Name="DOCID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_EDUCATION_DMN_MEMBERS">
+    <End Role="DMN_MEMBERS" Type="Self.DMN_MEMBERS" Multiplicity="0..1" />
+    <End Role="DMN_EDUCATION" Type="Self.DMN_EDUCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_MEMBERS">
+        <PropertyRef Name="MEMBERID" />
+      </Principal>
+      <Dependent Role="DMN_EDUCATION">
+        <PropertyRef Name="MEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_EMPLOYERPROFILE_DMN_EMPLOYERS">
+    <End Role="DMN_EMPLOYERS" Type="Self.DMN_EMPLOYERS" Multiplicity="1" />
+    <End Role="DMN_EMPLOYERPROFILE" Type="Self.DMN_EMPLOYERPROFILE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_EMPLOYERS">
+        <PropertyRef Name="EMPLOYERID" />
+      </Principal>
+      <Dependent Role="DMN_EMPLOYERPROFILE">
+        <PropertyRef Name="EMPLOYERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_FISHINGLIST_DMN_EMPLOYERS">
+    <End Role="DMN_EMPLOYERS" Type="Self.DMN_EMPLOYERS" Multiplicity="1" />
+    <End Role="DMN_FISHINGLIST" Type="Self.DMN_FISHINGLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_EMPLOYERS">
+        <PropertyRef Name="EMPLOYERID" />
+      </Principal>
+      <Dependent Role="DMN_FISHINGLIST">
+        <PropertyRef Name="EMPLOYERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_JOBPOSTING_DMN_EMPLOYERS">
+    <End Role="DMN_EMPLOYERS" Type="Self.DMN_EMPLOYERS" Multiplicity="0..1" />
+    <End Role="DMN_JOBPOSTING" Type="Self.DMN_JOBPOSTING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_EMPLOYERS">
+        <PropertyRef Name="EMPLOYERID" />
+      </Principal>
+      <Dependent Role="DMN_JOBPOSTING">
+        <PropertyRef Name="EMPLOYERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_JOBADVERTISEMENT_DMN_JOBPOSTING">
+    <End Role="DMN_JOBPOSTING" Type="Self.DMN_JOBPOSTING" Multiplicity="0..1" />
+    <End Role="DMN_JOBADVERTISEMENT" Type="Self.DMN_JOBADVERTISEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_JOBPOSTING">
+        <PropertyRef Name="JOBID" />
+      </Principal>
+      <Dependent Role="DMN_JOBADVERTISEMENT">
+        <PropertyRef Name="JOBID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_JOBAPPLICANTS_DMN_JOBPOSTING">
+    <End Role="DMN_JOBPOSTING" Type="Self.DMN_JOBPOSTING" Multiplicity="1" />
+    <End Role="DMN_JOBAPPLICANTS" Type="Self.DMN_JOBAPPLICANTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_JOBPOSTING">
+        <PropertyRef Name="JOBID" />
+      </Principal>
+      <Dependent Role="DMN_JOBAPPLICANTS">
+        <PropertyRef Name="JOBID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_LOOKUPS_DMN_LOOKUPCATEGORIES">
+    <End Role="DMN_LOOKUPCATEGORIES" Type="Self.DMN_LOOKUPCATEGORIES" Multiplicity="0..1" />
+    <End Role="DMN_LOOKUPS" Type="Self.DMN_LOOKUPS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_LOOKUPCATEGORIES">
+        <PropertyRef Name="LOOKUPCATEGORYID" />
+      </Principal>
+      <Dependent Role="DMN_LOOKUPS">
+        <PropertyRef Name="CATEGORYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_MEMBERPROFILE_DMN_MEMBERS">
+    <End Role="DMN_MEMBERS" Type="Self.DMN_MEMBERS" Multiplicity="1" />
+    <End Role="DMN_MEMBERPROFILE" Type="Self.DMN_MEMBERPROFILE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_MEMBERS">
+        <PropertyRef Name="MEMBERID" />
+      </Principal>
+      <Dependent Role="DMN_MEMBERPROFILE">
+        <PropertyRef Name="MEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_MEMBERSOCIALIDS_DMN_MEMBERS">
+    <End Role="DMN_MEMBERS" Type="Self.DMN_MEMBERS" Multiplicity="0..1" />
+    <End Role="DMN_MEMBERSOCIALIDS" Type="Self.DMN_MEMBERSOCIALIDS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_MEMBERS">
+        <PropertyRef Name="MEMBERID" />
+      </Principal>
+      <Dependent Role="DMN_MEMBERSOCIALIDS">
+        <PropertyRef Name="MEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_MEMBERVESSELS_DMN_MEMBERS">
+    <End Role="DMN_MEMBERS" Type="Self.DMN_MEMBERS" Multiplicity="1" />
+    <End Role="DMN_MEMBERVESSELS" Type="Self.DMN_MEMBERVESSELS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_MEMBERS">
+        <PropertyRef Name="MEMBERID" />
+      </Principal>
+      <Dependent Role="DMN_MEMBERVESSELS">
+        <PropertyRef Name="MEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_NEXTOFKIN_DMN_MEMBERS">
+    <End Role="DMN_MEMBERS" Type="Self.DMN_MEMBERS" Multiplicity="0..1" />
+    <End Role="DMN_NEXTOFKIN" Type="Self.DMN_NEXTOFKIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_MEMBERS">
+        <PropertyRef Name="MEMBERID" />
+      </Principal>
+      <Dependent Role="DMN_NEXTOFKIN">
+        <PropertyRef Name="MEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_SEAASSIGNMENTS_DMN_MEMBERS">
+    <End Role="DMN_MEMBERS" Type="Self.DMN_MEMBERS" Multiplicity="0..1" />
+    <End Role="DMN_SEAASSIGNMENTS" Type="Self.DMN_SEAASSIGNMENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_MEMBERS">
+        <PropertyRef Name="MEMBERID" />
+      </Principal>
+      <Dependent Role="DMN_SEAASSIGNMENTS">
+        <PropertyRef Name="MEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_WORKASSIGNMENTS_DMN_MEMBERS">
+    <End Role="DMN_MEMBERS" Type="Self.DMN_MEMBERS" Multiplicity="0..1" />
+    <End Role="DMN_WORKASSIGNMENTS" Type="Self.DMN_WORKASSIGNMENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_MEMBERS">
+        <PropertyRef Name="MEMBERID" />
+      </Principal>
+      <Dependent Role="DMN_WORKASSIGNMENTS">
+        <PropertyRef Name="MEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_PASSAGEACCESS_DMN_PASSAGE">
+    <End Role="DMN_PASSAGES" Type="Self.DMN_PASSAGES" Multiplicity="1" />
+    <End Role="DMN_PASSAGEACCESS" Type="Self.DMN_PASSAGEACCESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_PASSAGES">
+        <PropertyRef Name="PASSAGEID" />
+      </Principal>
+      <Dependent Role="DMN_PASSAGEACCESS">
+        <PropertyRef Name="PASSAGEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_PAYMENTDETAILS_DMN_SUBSCRIPTIONS">
+    <End Role="DMN_SUBSCRIPTIONS" Type="Self.DMN_SUBSCRIPTIONS" Multiplicity="1" />
+    <End Role="DMN_PAYMENTDETAILS" Type="Self.DMN_PAYMENTDETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_SUBSCRIPTIONS">
+        <PropertyRef Name="SUBSCRIPTIONID" />
+      </Principal>
+      <Dependent Role="DMN_PAYMENTDETAILS">
+        <PropertyRef Name="SUBSCRIPTIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMN_SUBSCRIPTIONS_DMN_PLANMASTER">
+    <End Role="DMN_PLANMASTER" Type="Self.DMN_PLANMASTER" Multiplicity="0..1" />
+    <End Role="DMN_SUBSCRIPTIONS" Type="Self.DMN_SUBSCRIPTIONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMN_PLANMASTER">
+        <PropertyRef Name="PLANID" />
+      </Principal>
+      <Dependent Role="DMN_SUBSCRIPTIONS">
+        <PropertyRef Name="PLANID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DMN_CORPORATEMEMBERS">
+    <End Role="DMN_CORPORATES" Type="Self.DMN_CORPORATES" Multiplicity="*" />
+    <End Role="DMN_MEMBERS" Type="Self.DMN_MEMBERS" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="PBAR_PORTALEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DMN_AUDITLOG" EntityType="Self.DMN_AUDITLOG" />
+    <EntitySet Name="DMN_CALENDARITEMS" EntityType="Self.DMN_CALENDARITEMS" />
+    <EntitySet Name="DMN_CORPORATEPROFILE" EntityType="Self.DMN_CORPORATEPROFILE" />
+    <EntitySet Name="DMN_CORPORATES" EntityType="Self.DMN_CORPORATES" />
+    <EntitySet Name="DMN_CORPORATESERVICEPROVIDERS" EntityType="Self.DMN_CORPORATESERVICEPROVIDERS" />
+    <EntitySet Name="DMN_CORPORATEUSERS" EntityType="Self.DMN_CORPORATEUSERS" />
+    <EntitySet Name="DMN_CORPORATEVESSELS" EntityType="Self.DMN_CORPORATEVESSELS" />
+    <EntitySet Name="DMN_CREWLIST" EntityType="Self.DMN_CREWLIST" />
+    <EntitySet Name="DMN_DOCUMENTPROFILES" EntityType="Self.DMN_DOCUMENTPROFILES" />
+    <EntitySet Name="DMN_DOCUMENTS" EntityType="Self.DMN_DOCUMENTS" />
+    <EntitySet Name="DMN_EDUCATION" EntityType="Self.DMN_EDUCATION" />
+    <EntitySet Name="DMN_EMPLOYERPROFILE" EntityType="Self.DMN_EMPLOYERPROFILE" />
+    <EntitySet Name="DMN_EMPLOYERS" EntityType="Self.DMN_EMPLOYERS" />
+    <EntitySet Name="DMN_FISHINGLIST" EntityType="Self.DMN_FISHINGLIST" />
+    <EntitySet Name="DMN_JOBADVERTISEMENT" EntityType="Self.DMN_JOBADVERTISEMENT" />
+    <EntitySet Name="DMN_JOBAPPLICANTS" EntityType="Self.DMN_JOBAPPLICANTS" />
+    <EntitySet Name="DMN_JOBPOSTING" EntityType="Self.DMN_JOBPOSTING" />
+    <EntitySet Name="DMN_LOOKUPCATEGORIES" EntityType="Self.DMN_LOOKUPCATEGORIES" />
+    <EntitySet Name="DMN_LOOKUPS" EntityType="Self.DMN_LOOKUPS" />
+    <EntitySet Name="DMN_MEMBERCONFIRMATIONEMAIL" EntityType="Self.DMN_MEMBERCONFIRMATIONEMAIL" />
+    <EntitySet Name="DMN_MEMBERPROFILE" EntityType="Self.DMN_MEMBERPROFILE" />
+    <EntitySet Name="DMN_MEMBERS" EntityType="Self.DMN_MEMBERS" />
+    <EntitySet Name="DMN_MEMBERSOCIALIDS" EntityType="Self.DMN_MEMBERSOCIALIDS" />
+    <EntitySet Name="DMN_MEMBERVESSELS" EntityType="Self.DMN_MEMBERVESSELS" />
+    <EntitySet Name="DMN_NEXTOFKIN" EntityType="Self.DMN_NEXTOFKIN" />
+    <EntitySet Name="DMN_PASSAGEACCESS" EntityType="Self.DMN_PASSAGEACCESS" />
+    <EntitySet Name="DMN_PASSAGES" EntityType="Self.DMN_PASSAGES" />
+    <EntitySet Name="DMN_PAYMENTDETAILS" EntityType="Self.DMN_PAYMENTDETAILS" />
+    <EntitySet Name="DMN_PLANMASTER" EntityType="Self.DMN_PLANMASTER" />
+    <EntitySet Name="DMN_REMINDERITEMS" EntityType="Self.DMN_REMINDERITEMS" />
+    <EntitySet Name="DMN_ROTATIONALSEAASSIGNMENTS" EntityType="Self.DMN_ROTATIONALSEAASSIGNMENTS" />
+    <EntitySet Name="DMN_SEAASSIGNMENTS" EntityType="Self.DMN_SEAASSIGNMENTS" />
+    <EntitySet Name="DMN_SERVICEPROVIDERS" EntityType="Self.DMN_SERVICEPROVIDERS" />
+    <EntitySet Name="DMN_SUBSCRIPTIONS" EntityType="Self.DMN_SUBSCRIPTIONS" />
+    <EntitySet Name="DMN_SYSCONFIG" EntityType="Self.DMN_SYSCONFIG" />
+    <EntitySet Name="DMN_VERIFICATIONPLANS" EntityType="Self.DMN_VERIFICATIONPLANS" />
+    <EntitySet Name="DMN_VERIFYINFO" EntityType="Self.DMN_VERIFYINFO" />
+    <EntitySet Name="DMN_VESSELS" EntityType="Self.DMN_VESSELS" />
+    <EntitySet Name="DMN_WORKASSIGNMENTS" EntityType="Self.DMN_WORKASSIGNMENTS" />
+    <AssociationSet Name="FK_DMN_CALENDARITEMS_DMN_MEMBERS" Association="Self.FK_DMN_CALENDARITEMS_DMN_MEMBERS">
+      <End Role="DMN_MEMBERS" EntitySet="DMN_MEMBERS" />
+      <End Role="DMN_CALENDARITEMS" EntitySet="DMN_CALENDARITEMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_CORPORATEPROFILE_DMN_CORPORATES" Association="Self.FK_DMN_CORPORATEPROFILE_DMN_CORPORATES">
+      <End Role="DMN_CORPORATES" EntitySet="DMN_CORPORATES" />
+      <End Role="DMN_CORPORATEPROFILE" EntitySet="DMN_CORPORATEPROFILE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_CORPORATESERVICEPROVIDERS_DMN_CORPORATES" Association="Self.FK_DMN_CORPORATESERVICEPROVIDERS_DMN_CORPORATES">
+      <End Role="DMN_CORPORATES" EntitySet="DMN_CORPORATES" />
+      <End Role="DMN_CORPORATESERVICEPROVIDERS" EntitySet="DMN_CORPORATESERVICEPROVIDERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_CORPORATEUSERS_DMN_CORPORATES" Association="Self.FK_DMN_CORPORATEUSERS_DMN_CORPORATES">
+      <End Role="DMN_CORPORATES" EntitySet="DMN_CORPORATES" />
+      <End Role="DMN_CORPORATEUSERS" EntitySet="DMN_CORPORATEUSERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_CORPORATEVESSELS_DMN_CORPORATES1" Association="Self.FK_DMN_CORPORATEVESSELS_DMN_CORPORATES1">
+      <End Role="DMN_CORPORATES" EntitySet="DMN_CORPORATES" />
+      <End Role="DMN_CORPORATEVESSELS" EntitySet="DMN_CORPORATEVESSELS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_PASSAGE_DMN_CORPORATEVESSELS" Association="Self.FK_DMN_PASSAGE_DMN_CORPORATEVESSELS">
+      <End Role="DMN_CORPORATEVESSELS" EntitySet="DMN_CORPORATEVESSELS" />
+      <End Role="DMN_PASSAGES" EntitySet="DMN_PASSAGES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_CREWLIST_DMN_PASSAGE" Association="Self.FK_DMN_CREWLIST_DMN_PASSAGE">
+      <End Role="DMN_PASSAGES" EntitySet="DMN_PASSAGES" />
+      <End Role="DMN_CREWLIST" EntitySet="DMN_CREWLIST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_DOCUMENTPROFILES_DMN_MEMBERS" Association="Self.FK_DMN_DOCUMENTPROFILES_DMN_MEMBERS">
+      <End Role="DMN_MEMBERS" EntitySet="DMN_MEMBERS" />
+      <End Role="DMN_DOCUMENTPROFILES" EntitySet="DMN_DOCUMENTPROFILES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_DOCUMENTS_DMN_DOCUMENTPROFILES" Association="Self.FK_DMN_DOCUMENTS_DMN_DOCUMENTPROFILES">
+      <End Role="DMN_DOCUMENTPROFILES" EntitySet="DMN_DOCUMENTPROFILES" />
+      <End Role="DMN_DOCUMENTS" EntitySet="DMN_DOCUMENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_VERIFYINFO_DMN_DOCUMENTPROFILES" Association="Self.FK_DMN_VERIFYINFO_DMN_DOCUMENTPROFILES">
+      <End Role="DMN_DOCUMENTPROFILES" EntitySet="DMN_DOCUMENTPROFILES" />
+      <End Role="DMN_VERIFYINFO" EntitySet="DMN_VERIFYINFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_EDUCATION_DMN_MEMBERS" Association="Self.FK_DMN_EDUCATION_DMN_MEMBERS">
+      <End Role="DMN_MEMBERS" EntitySet="DMN_MEMBERS" />
+      <End Role="DMN_EDUCATION" EntitySet="DMN_EDUCATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_EMPLOYERPROFILE_DMN_EMPLOYERS" Association="Self.FK_DMN_EMPLOYERPROFILE_DMN_EMPLOYERS">
+      <End Role="DMN_EMPLOYERS" EntitySet="DMN_EMPLOYERS" />
+      <End Role="DMN_EMPLOYERPROFILE" EntitySet="DMN_EMPLOYERPROFILE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_FISHINGLIST_DMN_EMPLOYERS" Association="Self.FK_DMN_FISHINGLIST_DMN_EMPLOYERS">
+      <End Role="DMN_EMPLOYERS" EntitySet="DMN_EMPLOYERS" />
+      <End Role="DMN_FISHINGLIST" EntitySet="DMN_FISHINGLIST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_JOBPOSTING_DMN_EMPLOYERS" Association="Self.FK_DMN_JOBPOSTING_DMN_EMPLOYERS">
+      <End Role="DMN_EMPLOYERS" EntitySet="DMN_EMPLOYERS" />
+      <End Role="DMN_JOBPOSTING" EntitySet="DMN_JOBPOSTING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_JOBADVERTISEMENT_DMN_JOBPOSTING" Association="Self.FK_DMN_JOBADVERTISEMENT_DMN_JOBPOSTING">
+      <End Role="DMN_JOBPOSTING" EntitySet="DMN_JOBPOSTING" />
+      <End Role="DMN_JOBADVERTISEMENT" EntitySet="DMN_JOBADVERTISEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_JOBAPPLICANTS_DMN_JOBPOSTING" Association="Self.FK_DMN_JOBAPPLICANTS_DMN_JOBPOSTING">
+      <End Role="DMN_JOBPOSTING" EntitySet="DMN_JOBPOSTING" />
+      <End Role="DMN_JOBAPPLICANTS" EntitySet="DMN_JOBAPPLICANTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_LOOKUPS_DMN_LOOKUPCATEGORIES" Association="Self.FK_DMN_LOOKUPS_DMN_LOOKUPCATEGORIES">
+      <End Role="DMN_LOOKUPCATEGORIES" EntitySet="DMN_LOOKUPCATEGORIES" />
+      <End Role="DMN_LOOKUPS" EntitySet="DMN_LOOKUPS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_MEMBERPROFILE_DMN_MEMBERS" Association="Self.FK_DMN_MEMBERPROFILE_DMN_MEMBERS">
+      <End Role="DMN_MEMBERS" EntitySet="DMN_MEMBERS" />
+      <End Role="DMN_MEMBERPROFILE" EntitySet="DMN_MEMBERPROFILE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_MEMBERSOCIALIDS_DMN_MEMBERS" Association="Self.FK_DMN_MEMBERSOCIALIDS_DMN_MEMBERS">
+      <End Role="DMN_MEMBERS" EntitySet="DMN_MEMBERS" />
+      <End Role="DMN_MEMBERSOCIALIDS" EntitySet="DMN_MEMBERSOCIALIDS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_MEMBERVESSELS_DMN_MEMBERS" Association="Self.FK_DMN_MEMBERVESSELS_DMN_MEMBERS">
+      <End Role="DMN_MEMBERS" EntitySet="DMN_MEMBERS" />
+      <End Role="DMN_MEMBERVESSELS" EntitySet="DMN_MEMBERVESSELS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_NEXTOFKIN_DMN_MEMBERS" Association="Self.FK_DMN_NEXTOFKIN_DMN_MEMBERS">
+      <End Role="DMN_MEMBERS" EntitySet="DMN_MEMBERS" />
+      <End Role="DMN_NEXTOFKIN" EntitySet="DMN_NEXTOFKIN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_SEAASSIGNMENTS_DMN_MEMBERS" Association="Self.FK_DMN_SEAASSIGNMENTS_DMN_MEMBERS">
+      <End Role="DMN_MEMBERS" EntitySet="DMN_MEMBERS" />
+      <End Role="DMN_SEAASSIGNMENTS" EntitySet="DMN_SEAASSIGNMENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_WORKASSIGNMENTS_DMN_MEMBERS" Association="Self.FK_DMN_WORKASSIGNMENTS_DMN_MEMBERS">
+      <End Role="DMN_MEMBERS" EntitySet="DMN_MEMBERS" />
+      <End Role="DMN_WORKASSIGNMENTS" EntitySet="DMN_WORKASSIGNMENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_PASSAGEACCESS_DMN_PASSAGE" Association="Self.FK_DMN_PASSAGEACCESS_DMN_PASSAGE">
+      <End Role="DMN_PASSAGES" EntitySet="DMN_PASSAGES" />
+      <End Role="DMN_PASSAGEACCESS" EntitySet="DMN_PASSAGEACCESS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_PAYMENTDETAILS_DMN_SUBSCRIPTIONS" Association="Self.FK_DMN_PAYMENTDETAILS_DMN_SUBSCRIPTIONS">
+      <End Role="DMN_SUBSCRIPTIONS" EntitySet="DMN_SUBSCRIPTIONS" />
+      <End Role="DMN_PAYMENTDETAILS" EntitySet="DMN_PAYMENTDETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMN_SUBSCRIPTIONS_DMN_PLANMASTER" Association="Self.FK_DMN_SUBSCRIPTIONS_DMN_PLANMASTER">
+      <End Role="DMN_PLANMASTER" EntitySet="DMN_PLANMASTER" />
+      <End Role="DMN_SUBSCRIPTIONS" EntitySet="DMN_SUBSCRIPTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="DMN_CORPORATEMEMBERS" Association="Self.DMN_CORPORATEMEMBERS">
+      <End Role="DMN_CORPORATES" EntitySet="DMN_CORPORATES" />
+      <End Role="DMN_MEMBERS" EntitySet="DMN_MEMBERS" />
+    </AssociationSet>
+    <FunctionImport Name="SearchTFF">
+      <Parameter Name="tblname" Mode="In" Type="String" />
+      <Parameter Name="fldname" Mode="In" Type="String" />
+      <Parameter Name="fldvalue" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

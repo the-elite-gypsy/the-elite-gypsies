@@ -1,0 +1,7 @@
+F:\PBARPortal\PBAR.MemberPortal\PBAR.Common.ResourceFile\bin\Debug\PBAR.Common.ResourceFile.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.Common.ResourceFile\bin\Debug\PBAR.Common.ResourceFile.pdb
+F:\PBARPortal\PBAR.MemberPortal\PBAR.Common.ResourceFile\obj\Debug\PBAR.Common.ResourceFile.Common.ErrorMessage.resources
+F:\PBARPortal\PBAR.MemberPortal\PBAR.Common.ResourceFile\obj\Debug\PBAR.Common.ResourceFile.CommonMessage.resources
+F:\PBARPortal\PBAR.MemberPortal\PBAR.Common.ResourceFile\obj\Debug\PBAR.Common.ResourceFile.csproj.GenerateResource.Cache
+F:\PBARPortal\PBAR.MemberPortal\PBAR.Common.ResourceFile\obj\Debug\PBAR.Common.ResourceFile.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.Common.ResourceFile\obj\Debug\PBAR.Common.ResourceFile.pdb

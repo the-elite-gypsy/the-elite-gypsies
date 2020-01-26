@@ -1,0 +1,5 @@
+F:\PBARPortal\PBAR.MemberPortal\PBAR.BuisnessLayer.MemberAdmin\bin\Debug\PBAR.BuisnessLayer.MemberAdmin.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.BuisnessLayer.MemberAdmin\bin\Debug\PBAR.BuisnessLayer.MemberAdmin.pdb
+F:\PBARPortal\PBAR.MemberPortal\PBAR.BuisnessLayer.MemberAdmin\obj\Debug\PBAR.BuisnessLayer.MemberAdmin.csprojResolveAssemblyReference.cache
+F:\PBARPortal\PBAR.MemberPortal\PBAR.BuisnessLayer.MemberAdmin\obj\Debug\PBAR.BuisnessLayer.MemberAdmin.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.BuisnessLayer.MemberAdmin\obj\Debug\PBAR.BuisnessLayer.MemberAdmin.pdb

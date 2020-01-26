@@ -1,0 +1,4 @@
+F:\PBARPortal\PBAR.MemberPortal\PBAR.BuisnessLayer.MemberData\bin\Debug\PBAR.BuisnessLayer.MemberData.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.BuisnessLayer.MemberData\bin\Debug\PBAR.BuisnessLayer.MemberData.pdb
+F:\PBARPortal\PBAR.MemberPortal\PBAR.BuisnessLayer.MemberData\obj\Debug\PBAR.BuisnessLayer.MemberData.dll
+F:\PBARPortal\PBAR.MemberPortal\PBAR.BuisnessLayer.MemberData\obj\Debug\PBAR.BuisnessLayer.MemberData.pdb

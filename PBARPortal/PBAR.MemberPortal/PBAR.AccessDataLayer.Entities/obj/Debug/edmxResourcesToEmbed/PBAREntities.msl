@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PBAR_PORTALModelStoreContainer" CdmEntityContainer="PBAR_PORTALEntities">
+    <EntitySetMapping Name="DMN_AUDITLOG">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_AUDITLOG">
+        <MappingFragment StoreEntitySet="DMN_AUDITLOG">
+          <ScalarProperty Name="AUDITID" ColumnName="AUDITID" />
+          <ScalarProperty Name="AUDITCODE" ColumnName="AUDITCODE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="WORKSTATIONNAME" ColumnName="WORKSTATIONNAME" />
+          <ScalarProperty Name="NETWORKIP" ColumnName="NETWORKIP" />
+          <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_CALENDARITEMS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_CALENDARITEMS">
+        <MappingFragment StoreEntitySet="DMN_CALENDARITEMS">
+          <ScalarProperty Name="CALENDARITEMID" ColumnName="CALENDARITEMID" />
+          <ScalarProperty Name="ITEMTYPE" ColumnName="ITEMTYPE" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_CORPORATEPROFILE">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_CORPORATEPROFILE">
+        <MappingFragment StoreEntitySet="DMN_CORPORATEPROFILE">
+          <ScalarProperty Name="CORPORATEID" ColumnName="CORPORATEID" />
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+          <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+          <ScalarProperty Name="ADDRESS3" ColumnName="ADDRESS3" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+          <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+          <ScalarProperty Name="COREINDUSTRYID" ColumnName="COREINDUSTRYID" />
+          <ScalarProperty Name="LOCATIONID" ColumnName="LOCATIONID" />
+          <ScalarProperty Name="REGNNO" ColumnName="REGNNO" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_CORPORATES">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_CORPORATES">
+        <MappingFragment StoreEntitySet="DMN_CORPORATES">
+          <ScalarProperty Name="CORPORATEID" ColumnName="CORPORATEID" />
+          <ScalarProperty Name="REFERENCE" ColumnName="REFERENCE" />
+          <ScalarProperty Name="SUBSCRIPTIONID" ColumnName="SUBSCRIPTIONID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_CORPORATESERVICEPROVIDERS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_CORPORATESERVICEPROVIDERS">
+        <MappingFragment StoreEntitySet="DMN_CORPORATESERVICEPROVIDERS">
+          <ScalarProperty Name="CORPORATEID" ColumnName="CORPORATEID" />
+          <ScalarProperty Name="SERVICEPROVIDERID" ColumnName="SERVICEPROVIDERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_CORPORATEUSERS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_CORPORATEUSERS">
+        <MappingFragment StoreEntitySet="DMN_CORPORATEUSERS">
+          <ScalarProperty Name="CORPORATEID" ColumnName="CORPORATEID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="EMAILADDRESS" ColumnName="EMAILADDRESS" />
+          <ScalarProperty Name="PERMISSION" ColumnName="PERMISSION" />
+          <ScalarProperty Name="LASTLOGGEDIN" ColumnName="LASTLOGGEDIN" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_CORPORATEVESSELS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_CORPORATEVESSELS">
+        <MappingFragment StoreEntitySet="DMN_CORPORATEVESSELS">
+          <ScalarProperty Name="VESSELID" ColumnName="VESSELID" />
+          <ScalarProperty Name="CORPORATEID" ColumnName="CORPORATEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_CREWLIST">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_CREWLIST">
+        <MappingFragment StoreEntitySet="DMN_CREWLIST">
+          <ScalarProperty Name="PASSAGEID" ColumnName="PASSAGEID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_DOCUMENTPROFILES">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_DOCUMENTPROFILES">
+        <MappingFragment StoreEntitySet="DMN_DOCUMENTPROFILES">
+          <ScalarProperty Name="DOCID" ColumnName="DOCID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="DOCTYPEID" ColumnName="DOCTYPEID" />
+          <ScalarProperty Name="DOCSUBTYPEID" ColumnName="DOCSUBTYPEID" />
+          <ScalarProperty Name="REFERENCENO" ColumnName="REFERENCENO" />
+          <ScalarProperty Name="DOCTITLE" ColumnName="DOCTITLE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ISSUEDATE" ColumnName="ISSUEDATE" />
+          <ScalarProperty Name="EXPIRYDATE" ColumnName="EXPIRYDATE" />
+          <ScalarProperty Name="ISSUEDBYID" ColumnName="ISSUEDBYID" />
+          <ScalarProperty Name="ISSUEDCOUNTRYID" ColumnName="ISSUEDCOUNTRYID" />
+          <ScalarProperty Name="NEEDTOVERIFY" ColumnName="NEEDTOVERIFY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDON" ColumnName="LASTMODIFIEDON" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_DOCUMENTS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_DOCUMENTS">
+        <MappingFragment StoreEntitySet="DMN_DOCUMENTS">
+          <ScalarProperty Name="DOCID" ColumnName="DOCID" />
+          <ScalarProperty Name="DOCTYPEID" ColumnName="DOCTYPEID" />
+          <ScalarProperty Name="LINKID" ColumnName="LINKID" />
+          <ScalarProperty Name="DOCSOURCE" ColumnName="DOCSOURCE" />
+          <ScalarProperty Name="FILEUI" ColumnName="FILEUI" />
+          <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+          <ScalarProperty Name="FILEEXTENSION" ColumnName="FILEEXTENSION" />
+          <ScalarProperty Name="FILESIZE" ColumnName="FILESIZE" />
+          <ScalarProperty Name="FILEPATH" ColumnName="FILEPATH" />
+          <ScalarProperty Name="PRIVATE" ColumnName="PRIVATE" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_EDUCATION">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_EDUCATION">
+        <MappingFragment StoreEntitySet="DMN_EDUCATION">
+          <ScalarProperty Name="EDUCATIONID" ColumnName="EDUCATIONID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="EDUCATIONLEVEL" ColumnName="EDUCATIONLEVEL" />
+          <ScalarProperty Name="INSTITUTION" ColumnName="INSTITUTION" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="SPECIALIZATION" ColumnName="SPECIALIZATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_EMPLOYERPROFILE">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_EMPLOYERPROFILE">
+        <MappingFragment StoreEntitySet="DMN_EMPLOYERPROFILE">
+          <ScalarProperty Name="EMPLOYERID" ColumnName="EMPLOYERID" />
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+          <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+          <ScalarProperty Name="ADDRESS3" ColumnName="ADDRESS3" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+          <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+          <ScalarProperty Name="COREINDUSTRYID" ColumnName="COREINDUSTRYID" />
+          <ScalarProperty Name="LOCATIONID" ColumnName="LOCATIONID" />
+          <ScalarProperty Name="REGNNO" ColumnName="REGNNO" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_EMPLOYERS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_EMPLOYERS">
+        <MappingFragment StoreEntitySet="DMN_EMPLOYERS">
+          <ScalarProperty Name="EMPLOYERID" ColumnName="EMPLOYERID" />
+          <ScalarProperty Name="REFERENCE" ColumnName="REFERENCE" />
+          <ScalarProperty Name="SUBSCRIPTIONID" ColumnName="SUBSCRIPTIONID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_FISHINGLIST">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_FISHINGLIST">
+        <MappingFragment StoreEntitySet="DMN_FISHINGLIST">
+          <ScalarProperty Name="EMPLOYERID" ColumnName="EMPLOYERID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="SHORTLISTEDDATE" ColumnName="SHORTLISTEDDATE" />
+          <ScalarProperty Name="DOWNLOADED" ColumnName="DOWNLOADED" />
+          <ScalarProperty Name="DOWNLOADDATE" ColumnName="DOWNLOADDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_JOBADVERTISEMENT">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_JOBADVERTISEMENT">
+        <MappingFragment StoreEntitySet="DMN_JOBADVERTISEMENT">
+          <ScalarProperty Name="ADVERTISEID" ColumnName="ADVERTISEID" />
+          <ScalarProperty Name="JOBID" ColumnName="JOBID" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="STATUSID" ColumnName="STATUSID" />
+          <ScalarProperty Name="READCOUNT" ColumnName="READCOUNT" />
+          <ScalarProperty Name="MEMBERAPPLYCOUNT" ColumnName="MEMBERAPPLYCOUNT" />
+          <ScalarProperty Name="NONMEMBERAPPLYCOUNT" ColumnName="NONMEMBERAPPLYCOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_JOBAPPLICANTS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_JOBAPPLICANTS">
+        <MappingFragment StoreEntitySet="DMN_JOBAPPLICANTS">
+          <ScalarProperty Name="JOBID" ColumnName="JOBID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="APPLYDATE" ColumnName="APPLYDATE" />
+          <ScalarProperty Name="SHORTLISTEDDATE" ColumnName="SHORTLISTEDDATE" />
+          <ScalarProperty Name="DOWNLOADED" ColumnName="DOWNLOADED" />
+          <ScalarProperty Name="DOWNLOADDATE" ColumnName="DOWNLOADDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_JOBPOSTING">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_JOBPOSTING">
+        <MappingFragment StoreEntitySet="DMN_JOBPOSTING">
+          <ScalarProperty Name="JOBID" ColumnName="JOBID" />
+          <ScalarProperty Name="EMPLOYERID" ColumnName="EMPLOYERID" />
+          <ScalarProperty Name="JOBTITLE" ColumnName="JOBTITLE" />
+          <ScalarProperty Name="REFERENCE" ColumnName="REFERENCE" />
+          <ScalarProperty Name="JOBOWNER" ColumnName="JOBOWNER" />
+          <ScalarProperty Name="JOBTYPEID" ColumnName="JOBTYPEID" />
+          <ScalarProperty Name="JOBLOCATIONID" ColumnName="JOBLOCATIONID" />
+          <ScalarProperty Name="JOBSUBLOCATIONID" ColumnName="JOBSUBLOCATIONID" />
+          <ScalarProperty Name="VACANCIES" ColumnName="VACANCIES" />
+          <ScalarProperty Name="SPECIALIZATIONID" ColumnName="SPECIALIZATIONID" />
+          <ScalarProperty Name="SUBSPECIALIZATIONID" ColumnName="SUBSPECIALIZATIONID" />
+          <ScalarProperty Name="MINQUALIFICATIONID" ColumnName="MINQUALIFICATIONID" />
+          <ScalarProperty Name="MINSEAEXPERIENCE" ColumnName="MINSEAEXPERIENCE" />
+          <ScalarProperty Name="MINWORKEXPERIENCE" ColumnName="MINWORKEXPERIENCE" />
+          <ScalarProperty Name="MINSALARY" ColumnName="MINSALARY" />
+          <ScalarProperty Name="MAXSALARY" ColumnName="MAXSALARY" />
+          <ScalarProperty Name="CURRENCYID" ColumnName="CURRENCYID" />
+          <ScalarProperty Name="SALARYDESCRIPTION" ColumnName="SALARYDESCRIPTION" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="JOBDESCRIPTION" ColumnName="JOBDESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_LOOKUPCATEGORIES">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_LOOKUPCATEGORIES">
+        <MappingFragment StoreEntitySet="DMN_LOOKUPCATEGORIES">
+          <ScalarProperty Name="LOOKUPCATEGORYID" ColumnName="LOOKUPCATEGORYID" />
+          <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_LOOKUPS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_LOOKUPS">
+        <MappingFragment StoreEntitySet="DMN_LOOKUPS">
+          <ScalarProperty Name="LOOKUPID" ColumnName="LOOKUPID" />
+          <ScalarProperty Name="CATEGORYID" ColumnName="CATEGORYID" />
+          <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_MEMBERCONFIRMATIONEMAIL">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_MEMBERCONFIRMATIONEMAIL">
+        <MappingFragment StoreEntitySet="DMN_MEMBERCONFIRMATIONEMAIL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="SENDCONFIRMATIONEMAIL" ColumnName="SENDCONFIRMATIONEMAIL" />
+          <ScalarProperty Name="RECEIVECONFIRMATIONEMAIL" ColumnName="RECEIVECONFIRMATIONEMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_MEMBERPROFILE">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_MEMBERPROFILE">
+        <MappingFragment StoreEntitySet="DMN_MEMBERPROFILE">
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="MIDDLENAME" ColumnName="MIDDLENAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="NICKNAME" ColumnName="NICKNAME" />
+          <ScalarProperty Name="GENDERID" ColumnName="GENDERID" />
+          <ScalarProperty Name="CITIZENSHIPID" ColumnName="CITIZENSHIPID" />
+          <ScalarProperty Name="MARITALSTATUSID" ColumnName="MARITALSTATUSID" />
+          <ScalarProperty Name="RESIDENTADDRESS1" ColumnName="RESIDENTADDRESS1" />
+          <ScalarProperty Name="RESIDENTADDRESS2" ColumnName="RESIDENTADDRESS2" />
+          <ScalarProperty Name="RESIDENTADDRESS3" ColumnName="RESIDENTADDRESS3" />
+          <ScalarProperty Name="RESIDENTCITY" ColumnName="RESIDENTCITY" />
+          <ScalarProperty Name="RESIDENTCOUNTRYID" ColumnName="RESIDENTCOUNTRYID" />
+          <ScalarProperty Name="RESIDENTZIPCODE" ColumnName="RESIDENTZIPCODE" />
+          <ScalarProperty Name="PRIMARYCONTACT" ColumnName="PRIMARYCONTACT" />
+          <ScalarProperty Name="SECONDARYCONTACT" ColumnName="SECONDARYCONTACT" />
+          <ScalarProperty Name="EMAIL1" ColumnName="EMAIL1" />
+          <ScalarProperty Name="EMAIL2" ColumnName="EMAIL2" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+          <ScalarProperty Name="LANGUAGES" ColumnName="LANGUAGES" />
+          <ScalarProperty Name="SOURCEID" ColumnName="SOURCEID" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDON" ColumnName="LASTMODIFIEDON" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_MEMBERS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_MEMBERS">
+        <MappingFragment StoreEntitySet="DMN_MEMBERS">
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="REFERENCE" ColumnName="REFERENCE" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUSDATE" ColumnName="STATUSDATE" />
+          <ScalarProperty Name="PRIVATE" ColumnName="PRIVATE" />
+          <ScalarProperty Name="LASTLOGGEDIN" ColumnName="LASTLOGGEDIN" />
+          <ScalarProperty Name="LASTPASSWORDCHANGED" ColumnName="LASTPASSWORDCHANGED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_MEMBERSOCIALIDS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_MEMBERSOCIALIDS">
+        <MappingFragment StoreEntitySet="DMN_MEMBERSOCIALIDS">
+          <ScalarProperty Name="SOCIALID" ColumnName="SOCIALID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="SOCIALNETWORK" ColumnName="SOCIALNETWORK" />
+          <ScalarProperty Name="SOCIALNETWORKID" ColumnName="SOCIALNETWORKID" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_MEMBERVESSELS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_MEMBERVESSELS">
+        <MappingFragment StoreEntitySet="DMN_MEMBERVESSELS">
+          <ScalarProperty Name="VESSELID" ColumnName="VESSELID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_NEXTOFKIN">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_NEXTOFKIN">
+        <MappingFragment StoreEntitySet="DMN_NEXTOFKIN">
+          <ScalarProperty Name="NEXTOFKINID" ColumnName="NEXTOFKINID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+          <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+          <ScalarProperty Name="ADDRESS3" ColumnName="ADDRESS3" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+          <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_PASSAGEACCESS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_PASSAGEACCESS">
+        <MappingFragment StoreEntitySet="DMN_PASSAGEACCESS">
+          <ScalarProperty Name="PASSAGEID" ColumnName="PASSAGEID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_PASSAGES">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_PASSAGES">
+        <MappingFragment StoreEntitySet="DMN_PASSAGES">
+          <ScalarProperty Name="PASSAGEID" ColumnName="PASSAGEID" />
+          <ScalarProperty Name="VESSELID" ColumnName="VESSELID" />
+          <ScalarProperty Name="VOYAGENUMBER" ColumnName="VOYAGENUMBER" />
+          <ScalarProperty Name="JOURNEYTYPEID" ColumnName="JOURNEYTYPEID" />
+          <ScalarProperty Name="JOURNEYDATE" ColumnName="JOURNEYDATE" />
+          <ScalarProperty Name="PORTNAME" ColumnName="PORTNAME" />
+          <ScalarProperty Name="LASTPORTOFCALL" ColumnName="LASTPORTOFCALL" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDOON" ColumnName="CREATEDOON" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_PAYMENTDETAILS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_PAYMENTDETAILS">
+        <MappingFragment StoreEntitySet="DMN_PAYMENTDETAILS">
+          <ScalarProperty Name="PAYMENTID" ColumnName="PAYMENTID" />
+          <ScalarProperty Name="SUBSCRIPTIONID" ColumnName="SUBSCRIPTIONID" />
+          <ScalarProperty Name="PAYMENTMODE" ColumnName="PAYMENTMODE" />
+          <ScalarProperty Name="PAIDAMOUNT" ColumnName="PAIDAMOUNT" />
+          <ScalarProperty Name="EXPIRYDATE" ColumnName="EXPIRYDATE" />
+          <ScalarProperty Name="TRANSACTIONREF" ColumnName="TRANSACTIONREF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_PLANMASTER">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_PLANMASTER">
+        <MappingFragment StoreEntitySet="DMN_PLANMASTER">
+          <ScalarProperty Name="PLANID" ColumnName="PLANID" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="FEE" ColumnName="FEE" />
+          <ScalarProperty Name="STORAGE" ColumnName="STORAGE" />
+          <ScalarProperty Name="DOCUMENTS" ColumnName="DOCUMENTS" />
+          <ScalarProperty Name="REMINDERS" ColumnName="REMINDERS" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_REMINDERITEMS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_REMINDERITEMS">
+        <MappingFragment StoreEntitySet="DMN_REMINDERITEMS">
+          <ScalarProperty Name="REMINDERID" ColumnName="REMINDERID" />
+          <ScalarProperty Name="CALENDARITEMID" ColumnName="CALENDARITEMID" />
+          <ScalarProperty Name="REMINDERUSERID" ColumnName="REMINDERUSERID" />
+          <ScalarProperty Name="REMINDERTYPE" ColumnName="REMINDERTYPE" />
+          <ScalarProperty Name="FREQUENCYDAYS" ColumnName="FREQUENCYDAYS" />
+          <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_ROTATIONALSEAASSIGNMENTS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_ROTATIONALSEAASSIGNMENTS">
+        <MappingFragment StoreEntitySet="DMN_ROTATIONALSEAASSIGNMENTS">
+          <ScalarProperty Name="ROTATIONALID" ColumnName="ROTATIONALID" />
+          <ScalarProperty Name="ASSIGNMENTID" ColumnName="ASSIGNMENTID" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_SEAASSIGNMENTS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_SEAASSIGNMENTS">
+        <MappingFragment StoreEntitySet="DMN_SEAASSIGNMENTS">
+          <ScalarProperty Name="ASSIGNMENTID" ColumnName="ASSIGNMENTID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DEPARTMENTID" ColumnName="DEPARTMENTID" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="RANKID" ColumnName="RANKID" />
+          <ScalarProperty Name="RANKOTHERS" ColumnName="RANKOTHERS" />
+          <ScalarProperty Name="VESSELID" ColumnName="VESSELID" />
+          <ScalarProperty Name="PORTOFREGISTRYID" ColumnName="PORTOFREGISTRYID" />
+          <ScalarProperty Name="PORTOFREGISTRYOTHERS" ColumnName="PORTOFREGISTRYOTHERS" />
+          <ScalarProperty Name="TOTALSEATIMEDAYS" ColumnName="TOTALSEATIMEDAYS" />
+          <ScalarProperty Name="ROTATIONALTYPE" ColumnName="ROTATIONALTYPE" />
+          <ScalarProperty Name="ROTATIONALUNITINDAYS" ColumnName="ROTATIONALUNITINDAYS" />
+          <ScalarProperty Name="PRIVATE" ColumnName="PRIVATE" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDON" ColumnName="LASTMODIFIEDON" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_SERVICEPROVIDERS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_SERVICEPROVIDERS">
+        <MappingFragment StoreEntitySet="DMN_SERVICEPROVIDERS">
+          <ScalarProperty Name="SERVICEPROVIDERID" ColumnName="SERVICEPROVIDERID" />
+          <ScalarProperty Name="PROVIDERTYPE" ColumnName="PROVIDERTYPE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DEPARTMENTNAME" ColumnName="DEPARTMENTNAME" />
+          <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+          <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+          <ScalarProperty Name="ADDRESS3" ColumnName="ADDRESS3" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+          <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_SUBSCRIPTIONS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_SUBSCRIPTIONS">
+        <MappingFragment StoreEntitySet="DMN_SUBSCRIPTIONS">
+          <ScalarProperty Name="SUBSCRIPTIONID" ColumnName="SUBSCRIPTIONID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="PLANID" ColumnName="PLANID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="FEE" ColumnName="FEE" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_SYSCONFIG">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_SYSCONFIG">
+        <MappingFragment StoreEntitySet="DMN_SYSCONFIG">
+          <ScalarProperty Name="SECTION" ColumnName="SECTION" />
+          <ScalarProperty Name="KEYNAME" ColumnName="KEYNAME" />
+          <ScalarProperty Name="KEYNAME2" ColumnName="KEYNAME2" />
+          <ScalarProperty Name="KEYVALUE" ColumnName="KEYVALUE" />
+          <ScalarProperty Name="KEYVALUEXEX" ColumnName="KEYVALUEXEX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_VERIFICATIONPLANS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_VERIFICATIONPLANS">
+        <MappingFragment StoreEntitySet="DMN_VERIFICATIONPLANS">
+          <ScalarProperty Name="PURCHASEID" ColumnName="PURCHASEID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="FEE" ColumnName="FEE" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="PAYMENTMODE" ColumnName="PAYMENTMODE" />
+          <ScalarProperty Name="PAIDAMOUNT" ColumnName="PAIDAMOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_VERIFYINFO">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_VERIFYINFO">
+        <MappingFragment StoreEntitySet="DMN_VERIFYINFO">
+          <ScalarProperty Name="DOCID" ColumnName="DOCID" />
+          <ScalarProperty Name="SERVICEPROVIDERID" ColumnName="SERVICEPROVIDERID" />
+          <ScalarProperty Name="REQUESTDATE" ColumnName="REQUESTDATE" />
+          <ScalarProperty Name="SUBMITTEDDATE" ColumnName="SUBMITTEDDATE" />
+          <ScalarProperty Name="SUBMITTEDEMAIL" ColumnName="SUBMITTEDEMAIL" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="REPLYDATE" ColumnName="REPLYDATE" />
+          <ScalarProperty Name="REPLYRESULT" ColumnName="REPLYRESULT" />
+          <ScalarProperty Name="REPLYDOCID" ColumnName="REPLYDOCID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_VESSELS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_VESSELS">
+        <MappingFragment StoreEntitySet="DMN_VESSELS">
+          <ScalarProperty Name="VESSELID" ColumnName="VESSELID" />
+          <ScalarProperty Name="VESSELCATEGORY" ColumnName="VESSELCATEGORY" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="GROSSTONNAGE" ColumnName="GROSSTONNAGE" />
+          <ScalarProperty Name="CAPACITY" ColumnName="CAPACITY" />
+          <ScalarProperty Name="VESSELTYPE" ColumnName="VESSELTYPE" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="CALLSIGN" ColumnName="CALLSIGN" />
+          <ScalarProperty Name="IMONUMBER" ColumnName="IMONUMBER" />
+          <ScalarProperty Name="TEU" ColumnName="TEU" />
+          <ScalarProperty Name="ENGINEPOWER" ColumnName="ENGINEPOWER" />
+          <ScalarProperty Name="ENGINETYPE" ColumnName="ENGINETYPE" />
+          <ScalarProperty Name="VESSELOWNER" ColumnName="VESSELOWNER" />
+          <ScalarProperty Name="REGISTEREDCOMPANY" ColumnName="REGISTEREDCOMPANY" />
+          <ScalarProperty Name="PORTOFREGISTRY" ColumnName="PORTOFREGISTRY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDON" ColumnName="LASTMODIFIEDON" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMN_WORKASSIGNMENTS">
+      <EntityTypeMapping TypeName="PBAR_PORTALModel.DMN_WORKASSIGNMENTS">
+        <MappingFragment StoreEntitySet="DMN_WORKASSIGNMENTS">
+          <ScalarProperty Name="ASSIGNEMENTID" ColumnName="ASSIGNEMENTID" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DEPARTMENTID" ColumnName="DEPARTMENTID" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="PRIVATE" ColumnName="PRIVATE" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="LASTMODIFIEDON" ColumnName="LASTMODIFIEDON" />
+          <ScalarProperty Name="LASTMODIFIEDBY" ColumnName="LASTMODIFIEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DMN_CORPORATEMEMBERS" TypeName="PBAR_PORTALModel.DMN_CORPORATEMEMBERS" StoreEntitySet="DMN_CORPORATEMEMBERS">
+      <EndProperty Name="DMN_CORPORATES">
+        <ScalarProperty Name="CORPORATEID" ColumnName="CORPORATEID" />
+      </EndProperty>
+      <EndProperty Name="DMN_MEMBERS">
+        <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="SearchTFF" FunctionName="PBAR_PORTALModel.Store.SearchTFF" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4C3D397-CA0D-4A51-B514-8F33B869A995}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PBAR.AccessDataLayer.Entities</RootNamespace>
+    <AssemblyName>PBAR.AccessDataLayer.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="DMN_AUDITLOG.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_CALENDARITEMS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_CORPORATEPROFILE.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_CORPORATES.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_CORPORATESERVICEPROVIDERS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_CORPORATEUSERS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_CORPORATEVESSELS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_CREWLIST.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_DOCUMENTPROFILES.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_DOCUMENTS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_EDUCATION.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_EMPLOYERPROFILE.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_EMPLOYERS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_FISHINGLIST.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_JOBADVERTISEMENT.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_JOBAPPLICANTS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_JOBPOSTING.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_LOOKUPCATEGORIES.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_LOOKUPS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_MEMBERCONFIRMATIONEMAIL.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_MEMBERPROFILE.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_MEMBERS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_MEMBERSOCIALIDS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_MEMBERVESSELS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_NEXTOFKIN.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_PASSAGEACCESS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_PASSAGES.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_PAYMENTDETAILS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_PLANMASTER.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_REMINDERITEMS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_ROTATIONALSEAASSIGNMENTS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_SEAASSIGNMENTS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_SERVICEPROVIDERS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_SUBSCRIPTIONS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_SYSCONFIG.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_VERIFICATIONPLANS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_VERIFYINFO.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_VESSELS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMN_WORKASSIGNMENTS.cs">
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PBAREntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PBAREntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PBAREntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PBAREntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PBAREntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PBAREntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="PBAREntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PBAREntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="PBAREntities.edmx.diagram">
+      <DependentUpon>PBAREntities.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PBAREntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PBAREntities.edmx</DependentUpon>
+      <LastGenOutput>PBAREntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PBAREntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PBAREntities.edmx</DependentUpon>
+      <LastGenOutput>PBAREntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

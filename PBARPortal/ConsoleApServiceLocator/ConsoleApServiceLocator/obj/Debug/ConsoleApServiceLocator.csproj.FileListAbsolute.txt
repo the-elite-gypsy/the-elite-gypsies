@@ -1,0 +1,5 @@
+F:\PBARPortal\ConsoleApServiceLocator\ConsoleApServiceLocator\bin\Debug\ConsoleApServiceLocator.exe.config
+F:\PBARPortal\ConsoleApServiceLocator\ConsoleApServiceLocator\bin\Debug\ConsoleApServiceLocator.exe
+F:\PBARPortal\ConsoleApServiceLocator\ConsoleApServiceLocator\bin\Debug\ConsoleApServiceLocator.pdb
+F:\PBARPortal\ConsoleApServiceLocator\ConsoleApServiceLocator\obj\Debug\ConsoleApServiceLocator.exe
+F:\PBARPortal\ConsoleApServiceLocator\ConsoleApServiceLocator\obj\Debug\ConsoleApServiceLocator.pdb

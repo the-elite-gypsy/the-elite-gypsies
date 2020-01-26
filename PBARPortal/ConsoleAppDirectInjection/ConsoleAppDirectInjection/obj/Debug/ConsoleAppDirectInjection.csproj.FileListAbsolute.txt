@@ -1,0 +1,6 @@
+F:\PBARPortal\ConsoleAppDirectInjection\ConsoleAppDirectInjection\bin\Debug\ConsoleAppDirectInjection.exe.config
+F:\PBARPortal\ConsoleAppDirectInjection\ConsoleAppDirectInjection\obj\Debug\ConsoleAppDirectInjection.csprojResolveAssemblyReference.cache
+F:\PBARPortal\ConsoleAppDirectInjection\ConsoleAppDirectInjection\bin\Debug\ConsoleAppDirectInjection.exe
+F:\PBARPortal\ConsoleAppDirectInjection\ConsoleAppDirectInjection\bin\Debug\ConsoleAppDirectInjection.pdb
+F:\PBARPortal\ConsoleAppDirectInjection\ConsoleAppDirectInjection\obj\Debug\ConsoleAppDirectInjection.exe
+F:\PBARPortal\ConsoleAppDirectInjection\ConsoleAppDirectInjection\obj\Debug\ConsoleAppDirectInjection.pdb
